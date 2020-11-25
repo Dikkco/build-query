@@ -1,0 +1,37 @@
+{
+    "name": "dikkco/build-query",
+    "description": "model query for orm.",
+    "type": "library",
+    "keywords": [
+        "tools",
+        "framework",
+        "orm"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dikkco",
+            "email": "phper.blue@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1"
+    },
+    "require-dev": {
+        "php-coveralls/php-coveralls": "^2.3",
+        "phpunit/phpunit": "~7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dikkco\\Buildable\\": "./src/"
+        },
+        "files": [
+            "src/Extend/common.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dikkco\\Buildable\\Tests\\": "./tests"
+        }
+    }
+}
