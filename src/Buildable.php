@@ -55,11 +55,11 @@ trait Buildable
      * $this->inKey(['x', 'y'], [TemplateClass::class, 'func'])
      * </pre>
      */
-    public function inKey($key, $operate = null)
+    public function inKey($key, $operate = null, $ignore = null)
     {
         $result = $this->renameKey($key);
 
-        if (param_exist($this->params, $result['key'])) {
+        if (param_exist($this->params, $result['key']) && $this->params[$result['key']] !== $ignore) {
             if (is_string($key = $this->params[$result['key']])) {
                 $key = explode(',', $key);
             }
