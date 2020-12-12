@@ -133,6 +133,13 @@ class QueryTest extends TestCase
         self::assertIsArray($result);
         self::assertArrayHasKey('user', $result);
         self::assertEquals($result['user'], ['IN', [4]]);
+        
+        //Test 5. Ignore
+        $result = $this->initial([])
+            ->param(TestData::TEST_DATA6)
+            ->inKey($key, null, TestData::TEST_DATA6[$key])
+            ->result();
+        self::assertEquals($result, []);
     }
 
     /**
